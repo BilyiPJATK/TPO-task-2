@@ -1,22 +1,16 @@
 package com.example.tpo_project_02;
 
-import org.springframework.beans.factory.annotation.Value;
-
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import java.util.Scanner;
 
+@SpringBootApplication
 public class FlashcardsApp {
-
     public static void main(String[] args) {
+        ApplicationContext context = SpringApplication.run(FlashcardsApp.class, args);
 
-        EntryRepository repository = new EntryRepository();
-
-        FileService.loadEntries(repository);
-
-        FileService fileService = ;
-
-        DisplayProfile profile = new NormalProfile();
-
-        FleshCardsController controller = new FleshCardsController(repository, profile);
+        FlashcardsController controller = context.getBean(FlashcardsController.class);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -33,18 +27,18 @@ public class FlashcardsApp {
                     String english = scanner.nextLine();
                     System.out.print("German: ");
                     String german = scanner.nextLine();
-                    controller.addEntry(new Entry(polish, german, english));
+                    controller.addEntry(polish, german, english);
                     break;
                 case 2:
                     controller.displayEntries();
                     break;
                 case 3:
-                    controller.Test();
+                    controller.startTest();
                     break;
                 case 4:
+                    System.out.println("Exiting...");
                     return;
             }
-
         }
     }
 }

@@ -1,3 +1,6 @@
-spring:
-  profiles:
-    active: Normal
+pl:
+  edu:
+    pja:
+      tpo02:
+        filename: "words.csv"
+        profile: Normal
