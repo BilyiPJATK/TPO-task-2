@@ -25,6 +25,6 @@ public class Entry {
 
     @Override
     public String toString(){
-        return "Polish: " + polish + " German:" + german + " English: " + english;
+        return "[Polish: " + polish + ", German:" + german + ", English: " + english + "]";
     }
 }

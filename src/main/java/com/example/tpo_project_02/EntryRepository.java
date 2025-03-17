@@ -18,7 +18,7 @@ public class EntryRepository {
     public String toString(){
         StringBuilder result = new StringBuilder();
         for (Entry entry : entries){
-            result.append(entry);
+            result.append(entry).append("\n");
         }
         return result.toString();
     }
